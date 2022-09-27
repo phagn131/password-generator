@@ -20,4 +20,4 @@ To generate a new password it must have meet these criteria as through a series 
 
 - The following image demonstrates the web application's appearance and functionality:
 
-![A page of the password generator](./assets/images/img-password-generator.png)
+![A page of the password generator](./assets/images/img-password-generator-2.png)

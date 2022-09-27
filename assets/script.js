@@ -1,6 +1,14 @@
 // Assignment code here
+// adding various methods, variables from class to jumpstart assignment
 //document.body;
 //console.log(main);
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+function generatePassword(){
+  window.prompt("Please choose the criteria for your password")
+}
+// 
 var password=document.getElementById("password");
 var numbers = "0123456789";
 var specialCharachters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
