@@ -10,7 +10,7 @@ console.log(testconsole);
 
 //charachter length
 for (var i = 0; i < password.length; i++){
-var randomNumber = Math.floor(Math.random() * options.length);
+var randomNumber = Math.floor(parseInt(userNumber))(Math.random() * options.length);
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
