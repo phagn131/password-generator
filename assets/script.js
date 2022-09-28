@@ -16,7 +16,6 @@ function generatePassword(){
     window.alert("Must input number!")
     return
  } 
-
  console.log(userInput)  
  var userInput = window.prompt("Do you want to include lowercase letters?")
  console.log(userInput)  
