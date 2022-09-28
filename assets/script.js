@@ -1,7 +1,7 @@
 // Assignment code here
 // adding various methods, variables from class to jumpstart assignment
 //document.body;
-//console.log(main);
+//alert("hello world"); check script works in console
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
