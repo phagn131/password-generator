@@ -11,11 +11,12 @@ function generatePassword(){
  console.log(userInput)  
  var userInput = window.prompt("Type in a password length between 8 and 128 charachters?")
  var passwordLength = parseInt(userInput)
-
- if (isNaN(passwordLength)) {
+//returns statement is no number or "" response is set
+ if (isNaN(passwordLength)) 
     window.alert("Must input number!")
     return
- } 
+    
+ }
  console.log(userInput)  
  var userInput = window.prompt("Do you want to include lowercase letters?")
  console.log(userInput)  
@@ -26,7 +27,7 @@ function generatePassword(){
  var userInput = window.prompt("Do you want to include special charachters?")
  console.log(userInput)
 
-}
+
 //write password to the assignment input
 function writePassword() {
     var password = generatePassword();
