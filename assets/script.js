@@ -9,22 +9,24 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword(){
 
 //set variable for password length
-var userInput = window.prompt("How long do you want your password?") 
+var userInput = window.prompt("How many charachters long do you want your password to be?") 
 
 var passwordLength = parseInt(userInput)
-
+//use not a number if user inputs invalid type
 if (isNaN(passwordLength)) {
     window.alert("Must input number!")
     return
 }
-
-
     if (passwordLength < 8 || passwordLength > 128)
-    window.alert("Length of Password must be between 8 and 128 charachters")
+    window.alert("Please enter a number between 8 and 128")
     return
  }
-//add 4 prompt messages 
+//add 4 prompt messages then add if else statements 
 
+var userSelectsNumbers = window.prompt("Would you like to include lowercase letters?")
+var userSelectsNumbers = window.prompt("Would you like to include uppercase letters?")
+var userSelectsNumbers = window.prompt("Would you like to include numbers?")
+var userSelectsNumbers = window.prompt("Would you like to include special charachters?")
 
 function writePassword() {
     var password = generatePassword();
