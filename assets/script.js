@@ -23,11 +23,16 @@ if (isNaN(passwordLength)) {
  }
 //add 4 prompt messages then add if else statements 
 
-var userSelectsNumbers = window.prompt("Would you like to include lowercase letters?")
-var userSelectsNumbers = window.prompt("Would you like to include uppercase letters?")
+var userSelectsLower = window.prompt("Would you like to include lowercase letters?")
+var userSelectsUpper = window.prompt("Would you like to include uppercase letters?")
 var userSelectsNumbers = window.prompt("Would you like to include numbers?")
-var userSelectsNumbers = window.prompt("Would you like to include special charachters?")
+var userSelectsSpecialCharachters = window.prompt("Would you like to include special charachters?")
 
+//set an array for the allowable input ***ADD quotes to array or find shortcut
+var lowerList = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+var UpperList = [A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
+var NumbersList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var SpecialCharList = ["!", "#", "$", "%", "&","'", "(", ")", "*","+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?","@", "[", "\", "^",_`{|}~"]
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
