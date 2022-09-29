@@ -1,34 +1,31 @@
-// Assignment code here
-// adding various methods, variables from class to jumpstart assignment
-//document.body;
-//alert("hello world"); check script works in console
-
-// Get references to the #generate element
+/* Assignment code here
+//set variables for each function (use var to run on older browsers)
+//use if else statements
+//math operator to generate random assignment to numbers, text and special charachters
+//use window.prompt for user input
+// Get references to the #generate element*/
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
- var userInput = window.prompt("Choose the password criteria by clicking ok");
- console.log(userInput)  
- var userInput = window.prompt("Type in a password length between 8 and 128 charachters?")
- var passwordLength = parseInt(userInput)
-//returns statement is no number or "" response is set
- if (isNaN(passwordLength)) 
+
+//set variable for password length
+var userInput = window.prompt("How long do you want your password?") 
+
+var passwordLength = parseInt(userInput)
+
+if (isNaN(passwordLength)) {
     window.alert("Must input number!")
     return
-    
+}
+
+
+    if (passwordLength < 8 || passwordLength > 128)
+    window.alert("Length of Password must be between 8 and 128 charachters")
+    return
  }
- console.log(userInput)  
- var userInput = window.prompt("Do you want to include lowercase letters?")
- console.log(userInput)  
- var userInput = window.prompt("Do you want to include uppercase letters?")
- console.log(userInput)  
- var userInput = window.prompt("Do you want to include numbers?")
- console.log(userInput)  
- var userInput = window.prompt("Do you want to include special charachters?")
- console.log(userInput)
+//add 4 prompt messages 
 
 
-//write password to the assignment input
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
@@ -36,4 +33,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
