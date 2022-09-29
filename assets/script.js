@@ -1,5 +1,5 @@
 /* Assignment code here
-//set variables for each function (use var to run on older browsers)
+//set variables for each function (use var instead of let to run on older browsers)
 //use if else statements
 //math operator to generate random assignment to numbers, text and special charachters
 //use window.prompt for user input
