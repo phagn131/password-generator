@@ -16,7 +16,7 @@ function getRandomItem(list) {
     }
 
 function generatePassword() {
-
+var userInput = ""    
 var userInput = window.prompt("How many charachters long do you want your password to be?")
 
 var passwordLength = parseInt(userInput)
@@ -30,11 +30,6 @@ if (passwordLength < 8 || passwordLength > 128) {
     return
     }
 
-if (userInput === null){
-        return
-    }
-    
-
 var userSelectsLower = window.confirm("Would you like to include lowercase letters in your password? Press OK for yes or Cancel for no") 
 console.log(userSelectsLower)
 var userSelectsUpper = window.confirm("Would you like to include uppercase letters in your password? Press OK for yes or Cancel for no")
@@ -45,10 +40,22 @@ var userSelectsspecialCharachters = window.confirm("Would you like to include sp
 console.log(userSelectsspecialCharachters)
 
 //set an array for the allowable input ***ADD quotes to array or find shortcut
-var lowerList = ["a", "b", "c", "d", "e", "f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var lowerList = arrayFromLowToHigh(65, 90) //["a", "b", "c", "d", "e", "f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var upperList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X", "Y", "Z"]
 var numbersList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-var specialList = ["!", "#", "$", "%", "&","'", "(", ")", "*","+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?","@", "["] 
+var specialList = ["!", "#", "$", "%", "&","'", "(", ")", "*","+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?","@", "["]
+
+String.fromCharCode(65)
+console.log(String.fromCharCode(65, 85))
+
+function arrayFromLowToHigh(low, high){
+var array = []
+for (var i = low; i <= high; i++){
+  array.push(i)      
+}
+return array
+}
+
 
 var optionsCart = []
 console.log(optionsCart)
@@ -70,7 +77,7 @@ if (userSelectsspecialCharachters === true) {
     }
 
 if (optionsCart.length === 0) {
-    window.alert("Please choose at least 1 charachter")
+    window.alert("Please select at least 1 charachter from the criteria")
     return
     }
 
@@ -84,7 +91,6 @@ for (var i = 0; i < passwordLength; i++) {
     
 
 return generatedPassword
-
 
 }
 
