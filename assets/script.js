@@ -20,7 +20,7 @@ function generatePassword() {
 var userInput = window.prompt("How many charachters long do you want your password to be?")
 
 var passwordLength = parseInt(userInput)
- 
+
 if (isNaN(passwordLength)){ 
     window.alert("Must input number!")
     return
@@ -29,6 +29,11 @@ if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Please enter a number between 8 and 128 charachters")
     return
     }
+
+if (userInput === null){
+        return
+    }
+    
 
 var userSelectsLower = window.confirm("Would you like to include lowercase letters in your password? Press OK for yes or Cancel for no") 
 console.log(userSelectsLower)
@@ -46,6 +51,7 @@ var numbersList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var specialList = ["!", "#", "$", "%", "&","'", "(", ")", "*","+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?","@", "["] 
 
 var optionsCart = []
+console.log(optionsCart)
 
 if (userSelectsLower === true) {
     optionsCart.push(lowerList)
@@ -63,8 +69,9 @@ if (userSelectsspecialCharachters === true) {
     optionsCart.push(specialList)
     }
 
-if (optionsCart === 0) {
-    optionsCart.push(lowerList)
+if (optionsCart.length === 0) {
+    window.alert("Please choose at least 1 charachter")
+    return
     }
 
 var generatedPassword = ""
@@ -77,6 +84,8 @@ for (var i = 0; i < passwordLength; i++) {
     
 
 return generatedPassword
+
+
 }
 
 function writePassword() {
