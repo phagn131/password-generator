@@ -44,11 +44,11 @@ console.log(userSelectsNumbers)
 var userSelectsSpecialCharachters = window.confirm("Would you like to include special charachters in your password? Press OK for yes or Cancel for no")
 console.log(userSelectsSpecialCharachters)
 
+//set an array for the allowable input ***ADD quotes to array or find shortcut
 var lowerList = ["a", "b", "c", "d", "e", "f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var upperList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X", "Y", "Z"]
 var numbersList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-var specialCharachtersList = ["!", "#", "$", "%", "&","'", "(", ")", "*","+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?","@", "["] 
-
+var SpecialCharachtersList = ["!", "#", "$", "%", "&","'", "(", ")", "*","+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?","@", "["] 
 var optionsCart = []
 
 if (userSelectsLower === true) {
@@ -64,10 +64,10 @@ if (userSelectsNumbers === true) {
 }
 
 if (userSelectsSpecialCharachters === true) {
-    optionsCart.push(specialCharachtersList)
+    optionsCart.push(SpecialCharachtersList)
 }
 
-if (optionsCart.length === 0) {
+if (optionsCart === 0) {
     optionsCart.push(lowerList)
 }
 
@@ -77,17 +77,15 @@ for (var i = 0; i < passwordLength; i++) {
     var randomList = getRandomItem(optionsCart)
     var randomChar = getRandomItem(randomList)
     generatedPassword += randomChar
-
+}
     return generatedPassword
 
-}
-}
+
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
-
-
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
