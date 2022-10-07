@@ -1,19 +1,6 @@
 // Assignment code here
-
+// Returns the firt element
 var generateBtn = document.querySelector("#generate");
-
-function randomInt(min, max) {
-  if (!max) {
-    max = min;
-    min = 0;
-  }
-  var rand = Math.random();
-  return Math.floor(min * (1 - rand) + rand * max);
-}
-
-function getRandomItem(list) {
-  return list[randomInt(list.length)];
-}
 
 function generatePassword() {
   var userInput = "";
@@ -22,7 +9,7 @@ function generatePassword() {
   );
 
   var passwordLength = parseInt(userInput);
-
+  // If user does not enter a number alert user to input number
   if (isNaN(passwordLength)) {
     window.alert("Must input number!");
     return;
@@ -31,7 +18,7 @@ function generatePassword() {
     window.alert("Please enter a number between 8 and 128 charachters");
     return;
   }
-
+  // Use window alerts to confirm selections
   var userSelectsLower = window.confirm(
     "Would you like to include lowercase letters in your password? Press OK for yes or Cancel for no"
   );
@@ -49,7 +36,9 @@ function generatePassword() {
   );
   console.log(userSelectsspecialCharachters);
 
-  //set an array for the allowable input ***ADD quotes to array or find shortcut
+  //set an array for the allowable input, 
+  // Lowercase letters, Uppercase letters, Numbers and Special charachters
+  // ***ADD quotes to array or find shortcut
   var lowerList = [
     "a",
     "b",
@@ -131,10 +120,10 @@ function generatePassword() {
     "@",
     "[",
   ];
-
+  // Sets a variable for the array
   var optionsCart = [];
   console.log(optionsCart);
-
+  // takes user input and adds to the end of the array with each char set
   if (userSelectsLower === true) {
     optionsCart.push(lowerList);
   }
@@ -150,14 +139,27 @@ function generatePassword() {
   if (userSelectsspecialCharachters === true) {
     optionsCart.push(specialList);
   }
-
+  // If no item is selected alert user to select a charchter
   if (optionsCart.length === 0) {
     window.alert("Please select at least 1 charachter from the criteria");
     return;
   }
+  // generates random number
+  function randomInt(min, max) {
+    if (!max) {
+      max = min;
+      min = 0;
+    }
+    var rand = Math.random();
+    return Math.floor(min * (1 - rand) + rand * max);
+  }
+  // takes list and returns a random value for an item in the array
+  function getRandomItem(list) {
+    return list[randomInt(list.length)];
+  }
 
   var generatedPassword = "";
-
+  // For loop to iterate the random char through the password length
   for (var i = 0; i < passwordLength; i++) {
     var randomList = getRandomItem(optionsCart);
     var randomChar = getRandomItem(randomList);
@@ -166,7 +168,7 @@ function generatePassword() {
 
   return generatedPassword;
 }
-
+// Initiate write password, generates the password and renders text to screen
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
